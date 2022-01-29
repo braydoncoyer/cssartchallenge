@@ -3,7 +3,6 @@ import fetch from 'isomorphic-unfetch';
 export default async function handler(req, res) {
     const { email } = req.body;
     const API_KEY = process.env.BUTTONDOWN_API_KEY;
-    // const API_KEY = "a23bf98c-9600-4294-8fa0-1aed991ab28e";
 
     console.log(email);
 
