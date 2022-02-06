@@ -9,6 +9,7 @@ import { PostFrontMatter } from 'types/PostFrontMatter'
 import NewsletterForm from '@/components/NewsletterForm'
 import { SignupForm } from '@/components/Signup'
 import { AuthorCTA } from '@/components/AuthorCTA'
+import PageTitle from '@/components/PageTitle'
 
 const MAX_DISPLAY = 5
 
@@ -22,60 +23,40 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <div className="divide-y divide-gray-500">
-        <div className="mx-auto max-w-2xl space-y-12 text-center">
-          <div>
-            <span className="text-xl font-semibold uppercase tracking-wide text-pink-500 md:text-xl">
-              css art challenge
-            </span>
-            <h1 className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text py-2 text-6xl font-extrabold text-transparent md:text-8xl">
-              Coming Soon
-            </h1>
-          </div>
-          <h2 className="text-2xl leading-loose text-slate-300 md:text-3xl md:leading-relaxed">
-            Win prizes and enhance your CSS skills by completing monthly challenges with the
-            community.
-          </h2>
-          <SignupForm />
-        </div>
-        <AuthorCTA />
-        {/* <div className="max-w-2xl mx-auto">
-          <div className="flex mt-10">
-            <div className="self-center flex-shrink-0 mr-4">
-              <Image
-                className="rounded-full"
-                width="80"
-                height="80"
-                src="/avatar.jpeg"
-                alt="Braydon Coyer"
-              />
-            </div>
-            <div>
-              <p className="text-base text-slate-300">
-                <span className="block font-bold">
-                  Hey there,{' '}
-                  <span role="img" aria-label="wave">
-                    👋
-                  </span>
-                </span>{' '}
-                I’m Braydon - a full-stack developer, blogger and the creator of this web app.{' '}
-                <span className="hidden md:block">
-                  I love all things related to front-end development and love connecting with
-                  individuals.
-                </span>
-              </p>
-              <a
-                className="text-purple-400 underline italics hover:text-purple-500"
-                href="https://braydoncoyer.dev/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Learn more about me
-              </a>
-            </div>
-          </div>
-        </div> */}
-        {/* <ul className="divide-y divide-gray-200 dark:divide-gray-700">
+      <div className="prose prose-lg">
+        <span className="text-xl font-semibold uppercase tracking-wide text-pink-500 md:text-xl">
+          Current Challenge
+        </span>
+        <PageTitle>Shadows</PageTitle>
+        <p>Take part in this month's challenge by creating landscapes in CSS.</p>
+        <Link href="/challenges">
+          <a>View challenge details &rarr;</a>
+        </Link>
+      </div>
+    </>
+  )
+}
+
+// ;<div className="divide-y divide-gray-500">
+//   <div className="max-w-2xl mx-auto space-y-12 text-center">
+//     <div>
+//       <span className="text-xl font-semibold tracking-wide text-pink-500 uppercase md:text-xl">
+//         css art challenge
+//       </span>
+//       <h1 className="py-2 text-6xl font-extrabold text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text md:text-8xl">
+//         Coming Soon
+//       </h1>
+//     </div>
+//     <h2 className="text-2xl leading-loose text-slate-300 md:text-3xl md:leading-relaxed">
+//       Win prizes and enhance your CSS skills by completing monthly challenges with the community.
+//     </h2>
+//     <SignupForm />
+//   </div>
+//   <AuthorCTA />
+// </div>
+
+{
+  /* <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
             const { slug, date, title, summary, tags } = frontMatter
@@ -125,9 +106,10 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
               </li>
             )
           })}
-        </ul> */}
-      </div>
-      {/* {posts.length > MAX_DISPLAY && (
+        </ul> */
+}
+{
+  /* {posts.length > MAX_DISPLAY && (
         <div className="flex justify-end text-base font-medium leading-6">
           <Link
             href="/blog"
@@ -142,7 +124,5 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
         <div className="flex items-center justify-center pt-4">
           <NewsletterForm />
         </div>
-      )} */}
-    </>
-  )
+      )} */
 }

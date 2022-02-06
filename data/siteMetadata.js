@@ -9,7 +9,7 @@ const siteMetadata = {
   siteRepo: 'https://github.com/braydoncoyer/cssartchallenge',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
-  socialBanner: '/static/images/twitter-card.png',
+  socialBanner: '/static/images/cssartchallengesocialimage.png',
   email: 'braydon@coyer.net',
   github: 'https://github.com/braydoncoyer',
   twitter: 'https://twitter.com/BraydonCoyer',

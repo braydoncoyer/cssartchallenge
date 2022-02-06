@@ -3,7 +3,7 @@ import { useRef, useState } from 'react'
 import { usePlausible } from 'next-plausible'
 
 export function useSubscribeToNewsletter() {
-  const [form, setForm] = useState()
+  const [form, setForm] = useState(null)
   const [formStatus, setFormStatus] = useState('INITIAL')
   const plausible = usePlausible()
   const inputEl = useRef(null)
