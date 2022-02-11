@@ -1,6 +1,7 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 
 import { AuthorCTA } from '@/components/AuthorCTA'
+import Image from 'next/image'
 import Link from 'next/link'
 import { PageSEO } from '@/components/SEO'
 import PageTitle from '@/components/PageTitle'
@@ -257,11 +258,11 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
           </div>
         </div>
         <div className="mt-12 -mb-16 sm:-mb-48 lg:relative lg:m-0">
-          <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0">
-            {/* Illustration taken from Lucid Illustrations: https://lucid.pixsellz.io/ */}
-            <img
-              className="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-              src="https://tailwindui.com/img/component-images/cloud-illustration-indigo-400.svg"
+          <div className="mx-auto hidden max-w-md px-4 sm:max-w-2xl sm:px-6 lg:block lg:max-w-none lg:px-0">
+            <Image
+              className="lg:absolute lg:inset-y-0 lg:left-24 lg:h-full lg:w-auto lg:max-w-none"
+              layout="fill"
+              src={`/static/images/landingpagegraphic.svg`}
               alt=""
             />
           </div>
