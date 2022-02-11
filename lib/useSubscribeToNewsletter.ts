@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 
+import siteMetadata from '@/data/siteMetadata'
 import { usePlausible } from 'next-plausible'
 
 export function useSubscribeToNewsletter() {
@@ -13,7 +14,7 @@ export function useSubscribeToNewsletter() {
     //   console.log(inputEl.current.value);
     setFormStatus('LOADING')
 
-    const res = await fetch(`/api/subscribe`, {
+    const res = await fetch(`/api/buttondown`, {
       body: JSON.stringify({
         email: inputEl.current.value,
       }),
@@ -36,7 +37,9 @@ export function useSubscribeToNewsletter() {
     inputEl.current.value = ''
 
     setFormStatus('SUCCESS')
-    setForm({ message: `Success! Please check your email to verify your subscription.` })
+    setForm({
+      message: `Success! 🎉 Please check your email to verify your subscription.`,
+    })
   }
 
   return { subscribe, inputEl, form, formStatus }

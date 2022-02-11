@@ -38,6 +38,9 @@ function SignupForm() {
             </span>
           )}
         </button>
+        <p className="mt-3 text-sm text-gray-300 sm:mt-4">
+          Get occational updates about new challenges and monthly winners. No spam - pinky promise!
+        </p>
       </form>
       <div className="text-left">
         {formStatus === 'ERROR' ? (

@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export function AuthorCTA() {
   return (
-    <div className="mx-auto max-w-2xl">
+    <div className="mx-auto max-w-2xl py-24">
       <div className="mt-10 flex">
         <div className="mr-4 flex-shrink-0 self-center">
           <Image
@@ -21,11 +21,9 @@ export function AuthorCTA() {
                 👋
               </span>
             </span>{' '}
-            I’m Braydon - a full-stack developer, blogger and the creator of this web app.{' '}
-            <span className="hidden md:block">
-              I love all things related to front-end development and love connecting with
-              individuals.
-            </span>
+            I’m Braydon - a full-stack developer, blogger and the creator of{' '}
+            <span className="font-semibold">CSS Art Challenge</span>. I love all things related to
+            front-end development and connecting with individuals.
           </p>
           <a
             className="italics text-indigo-400 underline hover:text-indigo-600"

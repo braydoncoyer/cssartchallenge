@@ -1,10 +1,11 @@
-import Link from '@/components/Link'
-import Tag from '@/components/Tag'
 import { ComponentProps, useState } from 'react'
-import Pagination from '@/components/Pagination'
-import formatDate from '@/lib/utils/formatDate'
-import { PostFrontMatter } from 'types/PostFrontMatter'
+
+import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
+import Pagination from '@/components/Pagination'
+import { PostFrontMatter } from 'types/PostFrontMatter'
+import Tag from '@/components/Tag'
+import formatDate from '@/lib/utils/formatDate'
 interface Props {
   posts: PostFrontMatter[]
   title: string
@@ -25,7 +26,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
 
   return (
     <>
-      <div className="divide-y">
+      <div className="divide-y px-3">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <PageTitle>{title}</PageTitle>
         </div>
