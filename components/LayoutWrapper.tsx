@@ -163,7 +163,7 @@ const LayoutWrapper = ({ children }: Props) => {
           </Transition>
         </Popover>
         <div className="pt-10 sm:pt-16 lg:overflow-hidden lg:pt-8 lg:pb-14">
-          <div className="mx-auto max-w-7xl lg:px-8">
+          <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <main>{children}</main>
           </div>
         </div>

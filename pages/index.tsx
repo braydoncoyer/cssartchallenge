@@ -16,8 +16,7 @@ import siteMetadata from '@/data/siteMetadata'
 const features = [
   {
     name: 'Monthly challenges',
-    description:
-      'A new challenge is posted each month with information about the challenge, how to apply and an introduction to the months sponsor.',
+    description: `A fresh challenge and competition details are posted each month with submission instructions and an introduction to the months sponsor.`,
     icon: (
       <svg className="absolute h-6 w-6 text-pink-500" fill="none" viewBox="0 0 24 24">
         <path
@@ -73,8 +72,8 @@ const features = [
     ),
   },
   {
-    name: 'Submit your piece',
-    description: `When you're ready, submit your CSS art to the community on Twitter using a special hashtag!`,
+    name: 'Submit your showcase',
+    description: `When you're ready, submit your CSS art to the community on Twitter using a special hashtag, allowing others to admire your art!`,
     icon: (
       <svg
         className="absolute h-6 w-6 text-pink-500"
@@ -221,78 +220,95 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <div className="lg:grid lg:grid-cols-2 lg:gap-8">
-        <div className="mx-auto max-w-md px-1 sm:max-w-2xl sm:px-6 sm:text-center lg:flex lg:items-center lg:px-0 lg:text-left">
-          <div className="lg:py-24">
-            <Link href="/">
-              <a className="inline-flex items-center rounded-full bg-black p-1 pr-2 text-white hover:text-gray-200 sm:text-base lg:text-sm xl:text-base">
-                <span className="rounded-full bg-pink-500 px-3 py-0.5 text-xs font-semibold uppercase leading-5 tracking-wide text-white">
-                  New
-                </span>
-                <span className="ml-4 text-sm">See this month's challenge</span>
-                <svg className="ml-2 h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24">
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="1.5"
-                    d="M10.75 8.75L14.25 12L10.75 15.25"
-                  ></path>
-                </svg>
-              </a>
-            </Link>
+      <div className="space-y-4">
+        <div className="pb-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:pb-0">
+          <div className="mx-auto max-w-md px-1 sm:max-w-2xl sm:px-6 sm:text-center lg:flex lg:items-center lg:px-0 lg:text-left">
+            <div className="lg:py-24">
+              <Link href="/">
+                <a className="inline-flex items-center rounded-full bg-black p-1 pr-2 text-white hover:text-gray-200 sm:text-base lg:text-sm xl:text-base">
+                  <span className="rounded-full bg-pink-500 px-3 py-0.5 text-xs font-semibold uppercase leading-5 tracking-wide text-white">
+                    New
+                  </span>
+                  <span className="ml-4 text-sm">See this month's challenge</span>
+                  <svg className="ml-2 h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24">
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.5"
+                      d="M10.75 8.75L14.25 12L10.75 15.25"
+                    ></path>
+                  </svg>
+                </a>
+              </Link>
 
-            <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
-              <span className="block">Complete CSS challenges and</span>
-              <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text py-2 text-transparent">
-                win monthly prizes
-              </span>
-            </h1>
-            <p className="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui Lorem cupidatat
-              commodo. Elit sunt amet fugiat veniam occaecat fugiat.
-            </p>
-            <div className="mt-10 sm:mt-12">
-              <SignupForm />
+              <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
+                <span className="block">Complete CSS challenges and</span>
+                <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text py-2 text-transparent">
+                  win monthly prizes
+                </span>
+              </h1>
+              <p className="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui Lorem cupidatat
+                commodo. Elit sunt amet fugiat veniam occaecat fugiat.
+              </p>
+              <div className="mt-10 sm:mt-12">
+                <SignupForm />
+              </div>
+            </div>
+          </div>
+          <div className="mt-12 -mb-16 sm:-mb-48 lg:relative lg:m-0">
+            <div className="mx-auto hidden max-w-md px-4 sm:max-w-2xl sm:px-6 lg:block lg:max-w-none lg:px-0">
+              <Image
+                className="lg:absolute lg:inset-y-0 lg:left-24 lg:h-full lg:w-auto lg:max-w-none"
+                layout="fill"
+                src={`/static/images/landingpagegraphic.svg`}
+                alt=""
+              />
             </div>
           </div>
         </div>
-        <div className="mt-12 -mb-16 sm:-mb-48 lg:relative lg:m-0">
-          <div className="mx-auto hidden max-w-md px-4 sm:max-w-2xl sm:px-6 lg:block lg:max-w-none lg:px-0">
-            <Image
-              className="lg:absolute lg:inset-y-0 lg:left-24 lg:h-full lg:w-auto lg:max-w-none"
-              layout="fill"
-              src={`/static/images/landingpagegraphic.svg`}
-              alt=""
-            />
+        <div>
+          <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-24 lg:px-8">
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text py-2 text-3xl font-extrabold text-transparent">
+                A better way to enhance your CSS skillset
+              </h2>
+              <p className="mt-4 text-lg text-gray-300">
+                Making layouts can only teach you so much. Instead of making the same thing over and
+                over again, learn new techniques by completing exciting monthly challenges.
+              </p>
+            </div>
+            <dl className="mt-12 space-y-10 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-4 lg:gap-x-8">
+              {features.map((feature) => (
+                <div key={feature.name} className="relative">
+                  <dt>
+                    {feature.icon}
+                    <p className="ml-9 text-lg font-medium leading-6 text-white">{feature.name}</p>
+                  </dt>
+                  <dd className="mt-2 ml-9 text-base text-gray-300">{feature.description}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
-      </div>
-      <div>
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-24 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text py-2 text-3xl font-extrabold text-transparent">
-              A better way to enhance your CSS skillset
+        <div>
+          <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:flex lg:items-center lg:justify-between lg:py-24 lg:px-8">
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+              <span className="block">Ready to join the fun?</span>
+              <span className="block bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                Check out this month's challenge!
+              </span>
             </h2>
-            <p className="mt-4 text-lg text-gray-300">
-              Making layouts can only teach you so much. Instead of making the same thing over and
-              over again, learn new techniques by completing exciting monthly challenges.
-            </p>
+            <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+              <button className="rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 px-5 py-3 font-medium text-white shadow-sm hover:opacity-80">
+                View challenge
+              </button>
+            </div>
           </div>
-          <dl className="mt-12 space-y-10 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-4 lg:gap-x-8">
-            {features.map((feature) => (
-              <div key={feature.name} className="relative">
-                <dt>
-                  {feature.icon}
-                  <p className="ml-9 text-lg font-medium leading-6 text-white">{feature.name}</p>
-                </dt>
-                <dd className="mt-2 ml-9 text-base text-gray-300">{feature.description}</dd>
-              </div>
-            ))}
-          </dl>
         </div>
+        <AuthorCTA />
       </div>
-      <AuthorCTA />
     </>
   )
 }
