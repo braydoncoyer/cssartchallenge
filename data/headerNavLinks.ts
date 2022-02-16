@@ -1,6 +1,8 @@
 const headerNavLinks = [
-  { href: '/challenges', title: 'Challenges' },
-  { href: '/about', title: 'About' },
+  { name: 'Home', href: '/' },
+  { name: 'Challenges', href: '/challenges' },
+  { name: 'Sponsor', href: '/sponsor' },
+  { name: 'Rules', href: '/rules' },
 ]
 
 export default headerNavLinks

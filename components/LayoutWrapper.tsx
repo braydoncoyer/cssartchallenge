@@ -7,13 +7,6 @@ import Logo from '@/data/cssartchallengelogo.svg'
 import { ReactNode } from 'react'
 import SectionContainer from './SectionContainer'
 import headerNavLinks from '@/data/headerNavLinks'
-import siteMetadata from '@/data/siteMetadata'
-
-const navigation = [
-  { name: 'Challenges', href: '/challenges' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Sponsor', href: '/sponsor' },
-]
 
 interface Props {
   children: ReactNode
@@ -33,7 +26,7 @@ const LayoutWrapper = ({ children }: Props) => {
                 <div className="flex w-full items-center justify-between md:w-auto">
                   <Link href="/">
                     <a>
-                      <span className="sr-only">Workflow</span>
+                      <span className="sr-only">CSS Art Challenge</span>
                       <Logo />
                     </a>
                   </Link>
@@ -68,7 +61,7 @@ const LayoutWrapper = ({ children }: Props) => {
                   </div>
                 </div>
                 <div className="hidden space-x-8 md:ml-10 md:flex">
-                  {navigation.map((item) => (
+                  {headerNavLinks.map((item) => (
                     <Link href={item.href} key={item.name}>
                       <a className="text-base font-medium text-white hover:text-gray-300">
                         {item.name}
@@ -76,11 +69,6 @@ const LayoutWrapper = ({ children }: Props) => {
                     </Link>
                   ))}
                 </div>
-              </div>
-              <div className="hidden md:flex md:items-center md:space-x-6">
-                <Link href="/">
-                  <a className="text-base font-medium text-white hover:text-gray-300">Rules</a>
-                </Link>
               </div>
             </nav>
           </div>
@@ -103,7 +91,7 @@ const LayoutWrapper = ({ children }: Props) => {
                   <div>
                     <Link href="/">
                       <a>
-                        <span className="sr-only">Workflow</span>
+                        <span className="sr-only">CSS Art Challenge</span>
                         <Logo />
                       </a>
                     </Link>
@@ -132,7 +120,7 @@ const LayoutWrapper = ({ children }: Props) => {
                 </div>
                 <div className="pt-5 pb-6">
                   <div className="space-y-1 px-2">
-                    {navigation.map((item) => (
+                    {headerNavLinks.map((item) => (
                       <a
                         key={item.name}
                         href={item.href}
@@ -141,21 +129,6 @@ const LayoutWrapper = ({ children }: Props) => {
                         {item.name}
                       </a>
                     ))}
-                  </div>
-                  <div className="mt-6 px-5">
-                    <Link href="/">
-                      <a className="block w-full rounded-md bg-indigo-600 px-4 py-3 text-center font-medium text-white shadow hover:bg-indigo-700">
-                        Start free trial
-                      </a>
-                    </Link>
-                  </div>
-                  <div className="mt-6 px-5">
-                    <p className="text-center text-base font-medium text-gray-500">
-                      Existing customer?{' '}
-                      <Link href="/">
-                        <a className="text-gray-900 hover:underline">Login</a>
-                      </Link>
-                    </p>
                   </div>
                 </div>
               </div>

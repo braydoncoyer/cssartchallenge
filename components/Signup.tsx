@@ -34,7 +34,7 @@ function SignupForm() {
                 />
               </svg>
 
-              <span>Notify me</span>
+              <span>Subscribe</span>
             </span>
           )}
         </button>

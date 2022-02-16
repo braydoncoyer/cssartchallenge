@@ -4,12 +4,8 @@ import { AuthorCTA } from '@/components/AuthorCTA'
 import Image from 'next/image'
 import Link from 'next/link'
 import { PageSEO } from '@/components/SEO'
-import PageTitle from '@/components/PageTitle'
 import { PostFrontMatter } from 'types/PostFrontMatter'
-import Script from 'next/script'
 import { SignupForm } from '@/components/Signup'
-import Tag from '@/components/Tag'
-import formatDate from '@/lib/utils/formatDate'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import siteMetadata from '@/data/siteMetadata'
 
@@ -72,8 +68,8 @@ const features = [
     ),
   },
   {
-    name: 'Submit your showcase',
-    description: `When you're ready, submit your CSS art to the community on Twitter using a special hashtag, allowing others to admire your art!`,
+    name: 'Submit & showcase',
+    description: `When you're ready, submit your CSS art to the community on Twitter using a special hashtag, allowing others to admire your submission!`,
     icon: (
       <svg
         className="absolute h-6 w-6 text-pink-500"
@@ -224,8 +220,8 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
         <div className="pb-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:pb-0">
           <div className="mx-auto max-w-md px-1 sm:max-w-2xl sm:px-6 sm:text-center lg:flex lg:items-center lg:px-0 lg:text-left">
             <div className="lg:py-24">
-              <Link href="/">
-                <a className="inline-flex items-center rounded-full bg-black p-1 pr-2 text-white hover:text-gray-200 sm:text-base lg:text-sm xl:text-base">
+              <Link href={`/challenge/${posts[0].slug}`}>
+                <a className="inline-flex items-center rounded-full bg-slate-800/50 p-1 pr-2 text-white hover:text-gray-200 sm:text-base lg:text-sm xl:text-base">
                   <span className="rounded-full bg-pink-500 px-3 py-0.5 text-xs font-semibold uppercase leading-5 tracking-wide text-white">
                     New
                   </span>
@@ -249,8 +245,8 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
                 </span>
               </h1>
               <p className="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui Lorem cupidatat
-                commodo. Elit sunt amet fugiat veniam occaecat fugiat.
+                CSS Art Challenge is a better way to enhance your CSS skillset. Learn new techniques
+                and engage with other CSS artists by completing monthly challenges!
               </p>
               <div className="mt-10 sm:mt-12">
                 <SignupForm />
@@ -301,9 +297,59 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
               </span>
             </h2>
             <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-              <button className="rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 px-5 py-3 font-medium text-white shadow-sm hover:opacity-80">
-                View challenge
-              </button>
+              <Link href={`/challenge/${posts[0].slug}`}>
+                <button className="flex items-center justify-center rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 px-5 py-3 font-medium text-white shadow-sm hover:opacity-80">
+                  <svg
+                    className="mr-2 h-6 w-6"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.89062 9.28125L4.87279 17.7937C4.44606 18.628 5.29889 19.5379 6.16008 19.1671L14.6016 16.1875"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    ></path>
+                    <path
+                      d="M13.3196 10.9774C14.9594 12.8695 15.698 15.085 14.9691 15.9259C14.2403 16.7669 12.3202 15.9147 10.6804 14.0226C9.04057 12.1305 8.30205 9.91499 9.03085 9.07406C9.75966 8.23313 11.6798 9.08527 13.3196 10.9774Z"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    ></path>
+                    <path
+                      d="M9.49994 17.6367C8.90314 17.2553 8.27339 16.707 7.68032 16.0227C7.28976 15.5721 6.95033 15.1031 6.66968 14.6387"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    ></path>
+                    <path
+                      d="M11.5 5C11.5 5.27614 11.2761 5.5 11 5.5C10.7239 5.5 10.5 5.27614 10.5 5C10.5 4.72386 10.7239 4.5 11 4.5C11.2761 4.5 11.5 4.72386 11.5 5Z"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    ></path>
+                    <path
+                      d="M15.75 9.25L15.8787 9.12132C17.0503 7.94975 17.0503 6.05025 15.8787 4.87868L15.75 4.75"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    ></path>
+                    <path
+                      d="M17 13.0001L17.2929 12.7072C17.6834 12.3167 18.3166 12.3167 18.7071 12.7072L19 13.0001"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    ></path>
+                  </svg>
+                  View challenge
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -311,167 +357,4 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
       </div>
     </>
   )
-}
-
-// ;<div className="divide-y divide-gray-500">
-//   <div className="max-w-2xl mx-auto space-y-12 text-center">
-//     <div>
-//       <span className="text-xl font-semibold tracking-wide text-pink-500 uppercase md:text-xl">
-//         css art challenge
-//       </span>
-//       <h1 className="py-2 text-6xl font-extrabold text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text md:text-8xl">
-//         Coming Soon
-//       </h1>
-//     </div>
-//     <h2 className="text-2xl leading-loose text-slate-300 md:text-3xl md:leading-relaxed">
-//       Win prizes and enhance your CSS skills by completing monthly challenges with the community.
-//     </h2>
-//     <SignupForm />
-//   </div>
-//   <AuthorCTA />
-// </div>
-
-{
-  /* <ul className="divide-y divide-gray-200 dark:divide-gray-700">
-          {!posts.length && 'No posts found.'}
-          {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
-            const { slug, date, title, summary, tags } = frontMatter
-            return (
-              <li key={slug} className="py-12">
-                <article>
-                  <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                    <dl>
-                      <dt className="sr-only">Published on</dt>
-                      <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                        <time dateTime={date}>{formatDate(date)}</time>
-                      </dd>
-                    </dl>
-                    <div className="space-y-5 xl:col-span-3">
-                      <div className="space-y-6">
-                        <div>
-                          <h2 className="text-2xl font-bold leading-8 tracking-tight">
-                            <Link
-                              href={`/blog/${slug}`}
-                              className="text-gray-900 dark:text-gray-100"
-                            >
-                              {title}
-                            </Link>
-                          </h2>
-                          <div className="flex flex-wrap">
-                            {tags.map((tag) => (
-                              <Tag key={tag} text={tag} />
-                            ))}
-                          </div>
-                        </div>
-                        <div className="prose text-gray-500 max-w-none dark:text-gray-400">
-                          {summary}
-                        </div>
-                      </div>
-                      <div className="text-base font-medium leading-6">
-                        <Link
-                          href={`/blog/${slug}`}
-                          className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                          aria-label={`Read "${title}"`}
-                        >
-                          Read more &rarr;
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              </li>
-            )
-          })}
-        </ul> */
-}
-{
-  /* {posts.length > MAX_DISPLAY && (
-        <div className="flex justify-end text-base font-medium leading-6">
-          <Link
-            href="/blog"
-            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-            aria-label="all posts"
-          >
-            All Posts &rarr;
-          </Link>
-        </div>
-      )}
-      {siteMetadata.newsletter.provider !== '' && (
-        <div className="flex items-center justify-center pt-4">
-          <NewsletterForm />
-        </div>
-      )} */
-}
-
-{
-  /* <div className="space-y-8 text-center">
-        <PageTitle>
-          Learn CSS. Win prizes. <br /> Complete monthly challenges!
-        </PageTitle>
-        <button className="inline-flex items-center justify-center px-5 py-3 space-x-2 font-medium text-white transform rounded-lg shadow-sm bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-80">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8.89062 9.28125L4.87279 17.7937C4.44606 18.628 5.29889 19.5379 6.16008 19.1671L14.6016 16.1875"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            ></path>
-            <path
-              d="M13.3196 10.9774C14.9594 12.8695 15.698 15.085 14.9691 15.9259C14.2403 16.7669 12.3202 15.9147 10.6804 14.0226C9.04057 12.1305 8.30205 9.91499 9.03085 9.07406C9.75966 8.23313 11.6798 9.08527 13.3196 10.9774Z"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            ></path>
-            <path
-              d="M9.49994 17.6367C8.90314 17.2553 8.27339 16.707 7.68032 16.0227C7.28976 15.5721 6.95033 15.1031 6.66968 14.6387"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            ></path>
-            <path
-              d="M11.5 5C11.5 5.27614 11.2761 5.5 11 5.5C10.7239 5.5 10.5 5.27614 10.5 5C10.5 4.72386 10.7239 4.5 11 4.5C11.2761 4.5 11.5 4.72386 11.5 5Z"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            ></path>
-            <path
-              d="M15.75 9.25L15.8787 9.12132C17.0503 7.94975 17.0503 6.05025 15.8787 4.87868L15.75 4.75"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            ></path>
-            <path
-              d="M17 13.0001L17.2929 12.7072C17.6834 12.3167 18.3166 12.3167 18.7071 12.7072L19 13.0001"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            ></path>
-          </svg>
-          <span>View challenge</span>
-        </button>
-      </div>
-      <div className="mt-12 prose prose-lg">
-        <span className="text-xl font-semibold tracking-wide text-pink-500 uppercase md:text-xl">
-          March Challenge:
-        </span>
-        <PageTitle>Shadows</PageTitle>
-        <p>Take part in this month's challenge by creating landscapes in CSS.</p>
-        <Link href="/challenges">
-          <a>View challenge details &rarr;</a>
-        </Link>
-      </div>
-      <div>
-        <AuthorCTA />
-      </div> */
 }
