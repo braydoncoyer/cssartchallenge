@@ -12,7 +12,7 @@ import siteMetadata from '@/data/siteMetadata'
 const features = [
   {
     name: 'Monthly challenges',
-    description: `A fresh challenge and competition details are posted each month with submission instructions and an introduction to the months sponsor.`,
+    description: `A fresh challenge and competition details are posted each month with submission instructions and an introduction to the month's sponsor.`,
     icon: (
       <svg className="absolute h-6 w-6 text-pink-500" fill="none" viewBox="0 0 24 24">
         <path
@@ -69,7 +69,7 @@ const features = [
   },
   {
     name: 'Submit & showcase',
-    description: `When you're ready, submit your CSS art to the community on Twitter using a special hashtag, allowing others to admire your submission!`,
+    description: `When you're ready, submit your CSS art to the community on Twitter using a special hashtag, allowing others to admire your masterpiece!`,
     icon: (
       <svg
         className="absolute h-6 w-6 text-pink-500"

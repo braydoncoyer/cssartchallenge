@@ -1,17 +1,14 @@
-import Link from '@/components/Link'
-import PageTitle from '@/components/PageTitle'
-import SectionContainer from '@/components/SectionContainer'
+import { AuthorFrontMatter } from 'types/AuthorFrontMatter'
 import { BlogSEO } from '@/components/SEO'
 import Image from '@/components/Image'
-import Tag from '@/components/Tag'
-import siteMetadata from '@/data/siteMetadata'
-import Comments from '@/components/comments'
-import ScrollTopAndComment from '@/components/ScrollTopAndComment'
-import { ReactNode } from 'react'
+import Link from '@/components/Link'
+import PageTitle from '@/components/PageTitle'
 import { PostFrontMatter } from 'types/PostFrontMatter'
-import { AuthorFrontMatter } from 'types/AuthorFrontMatter'
+import { ReactNode } from 'react'
+import ScrollTopAndComment from '@/components/ScrollTopAndComment'
+import SectionContainer from '@/components/SectionContainer'
+import siteMetadata from '@/data/siteMetadata'
 
-const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/blog/${fileName}`
 const discussUrl = (hashtag: string) =>
   `https://mobile.twitter.com/search?q=${encodeURIComponent(`#cssartchallenge ${hashtag}`)}`
 
@@ -30,8 +27,8 @@ interface Props {
   children: ReactNode
 }
 
-export default function PostLayout({ frontMatter, authorDetails, next, prev, children }: Props) {
-  const { slug, fileName, date, title, tags } = frontMatter
+export default function PostLayout({ frontMatter, authorDetails, children }: Props) {
+  const { slug, date, title } = frontMatter
 
   return (
     <SectionContainer>
@@ -103,32 +100,15 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               <div className="prose max-w-none pt-10 pb-8">{children}</div>
               <div className="pt-6 pb-6 text-sm">
                 <span className="text-indigo-400 hover:text-indigo-600">
-                  <Link href={discussUrl('#month1')} rel="nofollow">
+                  <Link href={discussUrl(frontMatter?.hashtag)} rel="nofollow">
                     {'View submissions on Twitter'}
                   </Link>
                 </span>
-                {` • `}
-                <span className="text-indigo-400 hover:text-indigo-600">
-                  <Link href={editUrl(fileName)}>{'View on GitHub'}</Link>
-                </span>
               </div>
-              <Comments frontMatter={frontMatter} />
             </div>
             <footer>
-              <div className="text-sm font-medium leading-5 xl:col-start-1 xl:row-start-2 xl:divide-y">
-                {tags && (
-                  <div className="py-4 xl:py-8">
-                    <h2 className="text-xs uppercase tracking-wide">Tags</h2>
-                    <div className="flex flex-wrap">
-                      {tags.map((tag) => (
-                        <Tag key={tag} text={tag} />
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
               <div className="pt-4 xl:pt-8">
-                <Link href="/blog" className="text-indigo-400 hover:text-indigo-600">
+                <Link href="/challenges" className="text-indigo-400 hover:text-indigo-600">
                   &larr; See all challenges
                 </Link>
               </div>
