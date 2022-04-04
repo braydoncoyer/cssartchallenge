@@ -271,8 +271,9 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
                 A better way to enhance your CSS skillset
               </h2>
               <p className="mt-4 text-lg text-gray-300">
-                Making layouts can only teach you so much. Instead of making the same thing over and
-                over again, learn new techniques by completing exciting monthly challenges.
+                CSS isn't just changing text color or centering elements on the screen. Instead of
+                making the same boring changes over and over again, learn new techniques by
+                completing exciting monthly challenges.
               </p>
             </div>
             <dl className="mt-12 space-y-10 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-4 lg:gap-x-8">
